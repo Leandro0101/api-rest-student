@@ -1,8 +1,9 @@
 import dotenv from 'dotenv'
 import express from 'express'
 import homeRoutes from './routes/home'
-import useRoutes from './routes/user'
+import userRoutes from './routes/user'
 import authRoutes from './routes/auth'
+import studentRoutes from './routes/student'
 import './database'
 dotenv.config()
 
@@ -19,8 +20,9 @@ class App {
 
   routes () {
     this.app.use(homeRoutes)
-    this.app.use(useRoutes)
+    this.app.use('/users', userRoutes)
     this.app.use('/auth', authRoutes)
+    this.app.use('/students', studentRoutes)
   }
 }
 
