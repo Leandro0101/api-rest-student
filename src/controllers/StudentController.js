@@ -1,6 +1,15 @@
+import Student from '../models/Student'
+
 class StudentController {
-  async index (req, res) {
-    return res.json('ok')
+  async store (req, res) {
+    try {
+      const student = await Student.create(req.body)
+      const { registrationNumber, name } = student
+      return res.status(201).json({ registrationNumber, name })
+    } catch (e) {
+      console.log(e)
+      return res.status(400).json({ errors: e.errors.map(err => err.message) })
+    }
   }
 }
 

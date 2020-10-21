@@ -1,7 +1,9 @@
 import Sequelize from 'sequelize'
 import dbConfig from '../config/database'
 import User from './../models/User'
-const models = [User]
+import Student from '../models/Student'
+
+const models = [User, Student]
 
 const connection = new Sequelize(dbConfig)
 

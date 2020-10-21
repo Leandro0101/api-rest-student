@@ -4,6 +4,7 @@ import homeRoutes from './routes/home'
 import userRoutes from './routes/user'
 import authRoutes from './routes/auth'
 import studentRoutes from './routes/student'
+import imageRoutes from './routes/image'
 import './database'
 dotenv.config()
 
@@ -23,6 +24,7 @@ class App {
     this.app.use('/users', userRoutes)
     this.app.use('/auth', authRoutes)
     this.app.use('/students', studentRoutes)
+    this.app.use('/images', imageRoutes)
   }
 }
 
