@@ -2,10 +2,10 @@ import multer from 'multer'
 import { resolve } from 'path'
 import crypto from 'crypto'
 export default {
-  dest: resolve(__dirname, '..', '..', 'tmp', 'uploads'),
+  dest: resolve(__dirname, '..', '..', 'uploads', 'images'),
   storage: multer.diskStorage({
     destination: (req, file, cb) => {
-      cb(null, resolve(__dirname, '..', '..', 'tmp', 'uploads'))
+      cb(null, resolve(__dirname, '..', '..', 'uploads', 'images'))
     },
     filename: (req, file, cb) => {
       crypto.randomBytes(16, (err, hash) => {
